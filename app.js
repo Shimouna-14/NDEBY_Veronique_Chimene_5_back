@@ -2,9 +2,10 @@ const express = require('express');
 const path = require('path');
 require("dotenv").config();
 const productRoutes = require('./routes/product');
-
+const cors = require("cors")
 const app = express();
 
+app.use(cors());
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', process.env.HOST);
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
