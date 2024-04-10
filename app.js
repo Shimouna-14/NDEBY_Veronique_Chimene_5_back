@@ -14,7 +14,6 @@ app.use((req, res, next) => {
 });
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
-app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 app.use('/api/products', productRoutes);
